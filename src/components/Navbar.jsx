@@ -30,6 +30,9 @@ const Navbar = () => {
 						</Link>
 					</li>
 				))}
+				<li className="px-4 cursor-pointer capitalize font-medium text-gray-400 hover:scale-105 duration-200">
+					<a href="https://ranjanyadav.com.np/old">Old Site</a>
+				</li>
 			</ul>
 			<div
 				onClick={() => {
@@ -65,6 +68,9 @@ const Navbar = () => {
 						>
 							Resume
 						</a>
+					</li>{' '}
+					<li className="px-4 cursor-pointer capitalize text-gray-300 py-6 text-4xl  hover:scale-105 duration-200">
+						<a href="https://ranjanyadav.com.np/old">Old Site</a>
 					</li>
 				</ul>
 			)}
