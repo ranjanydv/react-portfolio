@@ -1,6 +1,5 @@
-import { FaGithub, FaLinkedin } from 'react-icons/fa'
-import { HiOutlineMail } from 'react-icons/hi'
-import { BsFillPersonLinesFill } from 'react-icons/bs'
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { HiOutlineMail } from "react-icons/hi";
 
 const SocialLinks = () => {
 	const links = [
@@ -31,17 +30,8 @@ const SocialLinks = () => {
 				</>
 			),
 			href: 'mailto:theranzanydv@gmail.com',
-		},
-		{
-			id: 4,
-			child: (
-				<>
-					Resume <BsFillPersonLinesFill size={30} />
-				</>
-			),
-			href: '/Resume.pdf',
 			style: 'rounded-br-md',
-		},
+		}
 	]
 
 	return (
