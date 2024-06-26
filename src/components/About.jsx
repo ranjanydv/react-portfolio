@@ -23,18 +23,11 @@ const About = () => {
 				</div>
 				<div>
 					<p className="text-xl mt-20">
-						I'm {getAge()} years old, a programmer and and I currently live in
-						Nepal's capital. At the same time that I work to identify better
-						approaches to issues, I also enjoy expressing my thoughts to others.
-						Besides gaming and poetry, I like both of those things.
+                        As a {getAge()}-year-old programmer living in Nepal's capital, I excel in system design and problem-solving. I'm passionate about sharing ideas and creating innovative solutions. When not coding, I enjoy reading to unwind and stay creative.
 					</p>
 					<br />
 					<p className="text-xl">
-						As a PHP developer, I began my programming career. Over time, I
-						discovered working with Flutter to design and develop apps.
-						Nevertheless, working with flutter and creating the backend of
-						projects using NodeJS was a novel and forward-thinking experience,
-						which made me want to stick with it.
+                        I kickstarted my programming journey as a backend developer, diving deep into the world of NodeJS and NestJS. These powerful technologies allowed me to build robust and scalable server-side applications. As I progressed, I expanded my skill set to include frontend development, particularly with NextJS and AngularJS. This combination of backend expertise and frontend capabilities opened up new horizons for me. The seamless integration between NodeJS-based backends and NextJS frontends, along with the structured approach of AngularJS, provided a comprehensive and innovative development experience. This full-stack approach not only broadened my perspective but also solidified my passion for creating end-to-end web solutions.
 					</p>
 				</div>
 			</div>
