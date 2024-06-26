@@ -16,6 +16,22 @@ import {
 } from '../assets'
 
 const Skills = () => {
+  const [shuffledTechs, setShuffledTechs] = useState([]);
+
+  useEffect(() => {
+    // Fisher-Yates shuffle algorithm
+    const shuffleArray = (array) => {
+      const newArray = [...array];
+      for (let i = newArray.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+      }
+      return newArray;
+    };
+
+    setShuffledTechs(shuffleArray(techs));
+  }, []);
+	
 	const techs = [
 		{
 			id: 1,
@@ -117,7 +133,7 @@ const Skills = () => {
 				</div>
 
 				<div className="w-full grid grid-cols-2 sm:grid-cols-4 gap-8 text-center py-8 px-12	sm:px-0">
-					{techs.slice(1, 12).map(({ id, src, title, style }) => (
+{/* 					{techs.map(({ id, src, title, style }) => (
 						<div
 							key={id}
 							className={`shadow-md hover:scale-105 duration-500 py-2 rounded-lg ${style}`}
@@ -125,7 +141,16 @@ const Skills = () => {
 							<img src={src} alt={title} className="w-20 mx-auto" />
 							<p className="mt-4">{title}</p>
 						</div>
-					))}
+					))} */}
+					    {shuffledTechs.map(({ id, src, title, style }) => (
+						      <div
+						        key={id}
+						        className={`shadow-md hover:scale-105 duration-500 py-2 rounded-lg ${style}`}
+						      >
+						        <img src={src} alt={title} className="w-20 mx-auto" />
+						        <p className="mt-4">{title}</p>
+						      </div>
+					    ))}
 				</div>
 			</div>
 		</div>
