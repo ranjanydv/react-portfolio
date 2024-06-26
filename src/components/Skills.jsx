@@ -1,124 +1,61 @@
-import React, { useMemo } from 'react';
+import React, { useEffect, useState } from "react";
 import {
-    Html,
-    Css,
-    Dart,
+    Angular,
+    Docker,
     Express,
     Firebase,
     Flutter,
     Javascript,
+    Linux,
     Mongo,
+    MySQL,
+    NestJS,
     NextJS,
     Node,
-    PHP,
+    PostgreSQL,
     React as ReactIcon,
     Tailwind,
-    Typescript,
-} from '../assets';
+    Typescript
+} from "../assets";
 
 const techs = [
-    {
-        id: 1,
-        src: Html,
-        title: 'HTML',
-        style: 'shadow-orange-500',
-    },
-    {
-        id: 2,
-        src: Css,
-        title: 'CSS',
-        style: 'shadow-blue-300',
-    },
-    {
-        id: 3,
-        src: Javascript,
-        title: 'JavaScript',
-        style: 'shadow-yellow-500',
-    },
-    {
-        id: 4,
-        src: Typescript,
-        title: 'TypeScript',
-        style: 'shadow-blue-600',
-    },
-    {
-        id: 5,
-        src: Mongo,
-        title: 'Mongo DB',
-        style: 'shadow-green-500',
-    },
-    {
-        id: 6,
-        src: Express,
-        title: 'Express JS',
-        style: 'shadow-gray-300',
-    },
-    {
-        id: 7,
-        src: ReactIcon,
-        title: 'React JS',
-        style: 'shadow-blue-400',
-    },
-    {
-        id: 8,
-        src: Node,
-        title: 'Node JS',
-        style: 'shadow-green-600',
-    },
-    {
-        id: 9,
-        src: Firebase,
-        title: 'Firebase',
-        style: 'shadow-yellow-600',
-    },
-    {
-        id: 10,
-        src: Flutter,
-        title: 'Flutter',
-        style: 'shadow-blue-500',
-    },
-    {
-        id: 11,
-        src: NextJS,
-        title: 'Next JS',
-        style: 'shadow-white',
-    },
-    {
-        id: 12,
-        src: PHP,
-        title: 'PHP',
-        style: 'shadow-indigo-500',
-    },
-    {
-        id: 13,
-        src: Dart,
-        title: 'Dart',
-        style: 'shadow-blue-300',
-    },
-    {
-        id: 14,
-        src: Tailwind,
-        title: 'Tailwind CSS',
-        style: 'shadow-teal-500',
-    },
+    { src: Typescript, title: "TypeScript", style: "shadow-[#017acb]" },
+    { src: Mongo, title: "Mongo DB", style: "shadow-[#4e9445]" },
+    { src: Express, title: "Express JS", style: "shadow-gray-300" },
+    { src: ReactIcon, title: "React JS", style: "shadow-[#00d6fd]" },
+    { src: Node, title: "Node JS", style: "shadow-[#8bc74a]" },
+    { src: Firebase, title: "Firebase", style: "shadow-[#f4810b]" },
+    { src: Flutter, title: "Flutter", style: "shadow-[#01579b]" },
+    { src: NextJS, title: "Next JS", style: "shadow-gray-500" },
+    { src: Tailwind, title: "Tailwind CSS", style: "shadow-[#44a8b3]" },
+    { src: PostgreSQL, title: "PostgreSQL", style: "shadow-[#336791]" },
+    { src: Docker, title: "Docker", style: "shadow-[#1d63ed]" },
+    { src: NestJS, title: "NestJS", style: "shadow-[#e0234e]" },
+    { src: Angular, title: "Angular", style: "shadow-[#b52e31]" },
+    { src: Linux, title: "Linux", style: "shadow-[#ffc000]" },
+    { src: MySQL, title: "MySQL", style: "shadow-[#00758f]" },
 ];
 
 const Skills = () => {
-    const shuffledTechs = useMemo(() => {
-        const shuffleArray = (array) => {
-            const newArray = [...array];
-            for (let i = newArray.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+    const [randomizedTechs, setRandomizedTechs] = useState([]);
+
+    useEffect(() => {
+        const randomizeTechs = () => {
+            const techsCopy = [...techs];
+            const randomized = [];
+            while (techsCopy.length > 0) {
+                const randomIndex = Math.floor(Math.random() * techsCopy.length);
+                randomized.push(techsCopy[randomIndex]);
+                techsCopy.splice(randomIndex, 1);
             }
-            return newArray;
+            setRandomizedTechs(randomized);
         };
-        return shuffleArray(techs);
+
+        randomizeTechs();
     }, []);
 
     return (
         <div
-            name="skills"
             className="bg-gradient-to-b from-black via-black to-gray-800 w-full min-h-screen h-full"
         >
             <div className="max-w-screen-lg mx-auto p-4 flex flex-col justify-center w-full h-full text-white">
@@ -128,13 +65,13 @@ const Skills = () => {
                     </p>
                     <p className="py-6">These are the technologies I've worked with</p>
                 </div>
-                <div className="w-full grid grid-cols-2 sm:grid-cols-4 gap-8 text-center py-8 px-12 sm:px-0">
-                    {shuffledTechs.map(({ id, src, title, style }) => (
+                <div className="w-full grid grid-cols-2 sm:grid-cols-4 gap-8 text-center py-8 sm:px-0 lg:px-12">
+                    {randomizedTechs.map(({ src, title, style }, index) => (
                         <div
-                            key={id}
-                            className={`shadow-md hover:scale-105 duration-500 py-2 rounded-lg ${style}`}
+                            key={index}
+                            className={`shadow-md hover:scale-105 duration-500 py-2 rounded-lg flex flex-col justify-between ${style}`}
                         >
-                            <img src={src} alt={title} className="w-20 mx-auto" />
+                            <img src={src} alt={title} className="w-20 mx-auto"/>
                             <p className="mt-4">{title}</p>
                         </div>
                     ))}
