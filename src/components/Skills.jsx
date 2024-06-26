@@ -5,7 +5,6 @@ import {
     Express,
     Firebase,
     Flutter,
-    Javascript,
     Linux,
     Mongo,
     MySQL,
@@ -56,7 +55,7 @@ const Skills = () => {
 
     return (
         <div
-            className="bg-gradient-to-b from-black via-black to-gray-800 w-full min-h-screen h-full"
+            className="bg-gradient-to-b from-black via-black to-gray-800 w-full min-h-[100dvh] h-full"
         >
             <div className="max-w-screen-lg mx-auto p-4 flex flex-col justify-center w-full h-full text-white">
                 <div>
