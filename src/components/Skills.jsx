@@ -14,6 +14,7 @@ import {
 	Tailwind,
 	Typescript,
 } from '../assets'
+import React,{useMemo,useEffect} from 'react';
 
 const techs = [
 		{
@@ -104,10 +105,8 @@ const techs = [
 ]
 
 const Skills = () => {
-  const [shuffledTechs, setShuffledTechs] = useState([]);
 
-  useEffect(() => {
-    // Fisher-Yates shuffle algorithm
+  const shuffledTechs = useMemo(() => {
     const shuffleArray = (array) => {
       const newArray = [...array];
       for (let i = newArray.length - 1; i > 0; i--) {
@@ -116,11 +115,9 @@ const Skills = () => {
       }
       return newArray;
     };
-
-    setShuffledTechs(shuffleArray(techs));
+    return shuffleArray(techs);
   }, []);
 	
-
 	return (
 		<div
 			name="skills"
