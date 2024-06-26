@@ -15,24 +15,7 @@ import {
 	Typescript,
 } from '../assets'
 
-const Skills = () => {
-  const [shuffledTechs, setShuffledTechs] = useState([]);
-
-  useEffect(() => {
-    // Fisher-Yates shuffle algorithm
-    const shuffleArray = (array) => {
-      const newArray = [...array];
-      for (let i = newArray.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
-      }
-      return newArray;
-    };
-
-    setShuffledTechs(shuffleArray(techs));
-  }, []);
-	
-	const techs = [
+const techs = [
 		{
 			id: 1,
 			src: Html,
@@ -118,7 +101,26 @@ const Skills = () => {
 			title: 'Tailwind CSS',
 			style: 'shadow-teal-500',
 		},
-	]
+]
+
+const Skills = () => {
+  const [shuffledTechs, setShuffledTechs] = useState([]);
+
+  useEffect(() => {
+    // Fisher-Yates shuffle algorithm
+    const shuffleArray = (array) => {
+      const newArray = [...array];
+      for (let i = newArray.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+      }
+      return newArray;
+    };
+
+    setShuffledTechs(shuffleArray(techs));
+  }, []);
+	
+
 	return (
 		<div
 			name="skills"
