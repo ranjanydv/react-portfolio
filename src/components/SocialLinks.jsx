@@ -20,7 +20,7 @@ const SocialLinks = () => {
 					Github <FaGithub size={30} />
 				</>
 			),
-			href: 'https://www.github.com/theranzanydv',
+			href: 'https://www.github.com/ranjanydv',
 		},
 		{
 			id: 3,
@@ -29,7 +29,7 @@ const SocialLinks = () => {
 					Email <HiOutlineMail size={30} />
 				</>
 			),
-			href: 'mailto:theranzanydv@gmail.com',
+			href: 'mailto:ranjan.work911@gmail.com',
 			style: 'rounded-br-md',
 		}
 	]
