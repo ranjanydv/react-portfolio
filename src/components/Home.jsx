@@ -20,7 +20,7 @@ const Home = () => {
 						well as in a productive team.
 					</p>
 					<div>
-						<a href="https://github.com/theranzanydv" target="_blank" rel="noopener noreferrer">
+						<a href="https://github.com/ranjanydv" target="_blank" rel="noopener noreferrer">
 							<a className="group text-white w-fit px-6 py-3 my-2 flex items-center rounded-md bg-gradient-to-r from-cyan-500 to-blue-500 cursor-pointer">
 								See Works
 								<span className="group-hover:scale-90 duration-300">
