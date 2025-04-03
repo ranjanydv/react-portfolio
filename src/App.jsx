@@ -8,16 +8,16 @@ import SocialLinks from './components/SocialLinks'
 
 function App() {
 	return (
-		<div>
-			<Navbar />
+		<main className='max-w-screen max-h-screen overflow-hidden'>
+			{/* <Navbar /> */}
 			<Home />
-			<About />
+			{/* <About />
 			<Skills />
-			<Contact />
-			<Footer />
+			<Contact /> */}
+			{/* <Footer /> */}
 
 			<SocialLinks />
-		</div>
+		</main>
 	)
 }
 
