@@ -4,10 +4,11 @@ import heroImage from "../assets/heroImage.png";
 
 const Home = () => {
 	const heroText = `Crafting Digital Solutions from the Roof of the World 🇳🇵 🇳🇵. I wrestle with software – designing its guts, building its body, testing its reflexes, and keeping it in fighting shape. Embedded systems are my playground. Whether I'm a lone wolf or part of the pack, I get things done.`
+	
 	return (
 		<div
 			name="home"
-			className="bg-gradient-to-b from-black via-black to-gray-800 pt-[10vh] w-full h-screen min-h-[100dvh]"
+			className="bg-gradient-to-b from-black via-black to-gray-800 pt-[5vh] md:pt-[10vh] w-full max-w-screen h-screen max-h-screen"
 		>
 			<div className="flex md:flex-row flex-col-reverse justify-center items-center mx-auto px-4 max-w-screen-lg h-full">
 				<div className="flex flex-col justify-center h-full">
